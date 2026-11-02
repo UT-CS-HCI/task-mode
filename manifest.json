@@ -1,0 +1,19 @@
+{
+  "name": "TaskNavigator",
+  "version": "1.0",
+  "description": "A chrome popup extension to help users navigate the web efficiently.",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "storage", "scripting", "tabs", "windows"],
+  "host_permissions": ["http://*/*", "https://*/*", "<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {}
+}

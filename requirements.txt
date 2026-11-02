@@ -1,0 +1,10 @@
+flask
+flask-cors
+openai
+tiktoken
+sentence-transformers
+transformers
+torch
+numpy
+pillow
+requests

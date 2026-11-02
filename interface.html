@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task-Specific Dynamic Filtering of the Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="interface.css">
+  <script src="interface.js"></script>
+</head>
+<body>
+  <div class="status-container">
+    <p id="status-label" class="status-label hidden">Status: <span id="status" class="status-tag"></span></p>
+
+    <label for="displayStyle" class="task-label">Rendering style</label>
+    <select id="displayStyle" class="dropdown">
+      <option value="color-gradient">All information in color gradients</option>
+      <option value="less-opacity">Less opacity for off-task information</option>
+      <option value="task-specific">Only task-specific information visible</option>
+    </select>
+
+    <div id="relevanceSliderContainer" class="slider-container hidden">
+      <label for="relevanceThreshold" aria-label="Relevance threshold control">
+        <strong>Relevance threshold: </strong><span id="relevanceValue">70</span><span class="percentage">%</span>
+      </label>
+      <div class="slider-grid">
+        <span class="slider-label-left">0</span>
+        <input
+          type="range"
+          id="relevanceThreshold"
+          name="relevanceThreshold"
+          min="0"
+          max="100"
+          step="1"
+          value="70"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="70"
+        />
+        <span class="slider-label-right">100</span>
+      </div>
+      
+    </div>
+  </div>
+
+  
+  <div class="task-container">
+    <label for="taskInputWrapper" class="task-label">User task</label>
+    <div id="taskInputWrapper" style="display: flex; align-items: center;">
+      <input
+        type="text"
+        id="taskUpdate"
+        class="task-input"
+        placeholder="Please enter your task!"
+        aria-label="Task input"
+      />
+
+    </div>
+
+    <div class="task-buttons">
+      <button id="startTask" class="start-task">Start task</button>
+      <button id="completeTask" class="complete-task hidden">Task completed</button>
+    </div>
+  </div>
+</body>
+</html>
